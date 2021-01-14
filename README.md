@@ -12,13 +12,13 @@ This react coding challenge can be completed in your own time but you don't need
 *Any questions, feel free to ask.* 
 ## Core Features
 
-- [ ] Add a checklist item to the list
-- [ ] Remove a checklist item from the list
-- [ ] Mark checklist items and complete and incomplete
+- [x] Add a checklist item to the list
+- [x] Remove a checklist item from the list
+- [x] Mark checklist items and complete and incomplete
 ### Bonus points:
 
-- [ ] Spliting your coding into logical, DRY, nested components
-- [ ] Define your PropTypes
+- [x] Spliting your coding into logical, DRY, nested components
+- [x] Define your PropTypes
 - [ ] Build out 1 or 2 JEST tests for core parts of your work
 ## Tips
 
