@@ -3,6 +3,8 @@ import { useReducer } from 'react';
 import { Container } from 'react-bootstrap';
 import InputForm from './components/InputForm';
 import ItemList from './components/ItemList';
+import actionTypes from './state/actionTypes';
+import reducer from './state/reducer';
 
 const initialState = [
   { id: 0, body: 'hello world', isChecked: true },
@@ -10,33 +12,11 @@ const initialState = [
   { id: 2, body: 'hello world2', isChecked: false },
 ];
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_ITEM':
-      return [...state, action.payload];
-    case 'REMOVE_ITEM':
-      return state.filter((i) => i.id !== action.payload.itemId);
-    case 'TOGGLE_COMPLETE_ITEM':
-      const itemIndex = state.findIndex((i) => i.id === action.payload.itemId);
-      const newState = [...state];
-      newState[itemIndex].isChecked = action.payload.checked;
-      return newState;
-    default:
-      return state;
-  }
-};
-
-const actionTypes = {
-  ADD_ITEM: 'ADD_ITEM',
-  REMOVE_ITEM: 'REMOVE_ITEM',
-  TOGGLE_COMPLETE_ITEM: 'TOGGLE_COMPLETE_ITEM',
-};
-
 function App() {
   const [list, dispatch] = useReducer(reducer, initialState);
 
   const handleAddItem = (itemBody) => {
-    const item = { id: list.length, body: itemBody, isChecked: false };
+    const item = { id: list.length + 1, body: itemBody, isChecked: false };
     dispatch({ type: actionTypes.ADD_ITEM, payload: item });
   };
 
