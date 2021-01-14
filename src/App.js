@@ -6,11 +6,7 @@ import ItemList from './components/ItemList';
 import actionTypes from './state/actionTypes';
 import reducer from './state/reducer';
 
-const initialState = [
-  { id: 0, body: 'hello world', isChecked: true },
-  { id: 1, body: 'hello world1', isChecked: false },
-  { id: 2, body: 'hello world2', isChecked: false },
-];
+const initialState = [];
 
 function App() {
   const [list, dispatch] = useReducer(reducer, initialState);
